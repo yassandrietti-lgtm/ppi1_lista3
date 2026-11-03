@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout com flexbox</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topo {
+            height: 75px;
+            background-color: #252525;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-left: 30px;
+        }
+
+        .bolinha {
+            width: 30px;
+            height: 30px;
+            background-color: #00b9b5;
+            border-radius: 50%;
+        }
+
+        .principal {
+            flex: 1;
+            display: flex;
+        }
+
+        .navegacao {
+            width: 20%;
+            background-color: #ff8533;
+            display: flex;
+            justify-content: center;
+            padding-top: 15px;
+        }
+
+        .direita {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cabecalho {
+            height: 70px;
+            background-color: #00a9d6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .conteudo {
+            flex: 1;
+            background-color: #62509f;
+            display: flex;
+            justify-content: center;
+            padding-top: 15px;
+        }
+
+        .rodape {
+            height: 70px;
+            background-color: #1097b8;
+            display: flex;
+            justify-content: center;
+            padding-top: 15px;
+        }
+
+        h4 {
+            color: white;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="topo">
+            <div class="bolinha"></div>
+            <div class="bolinha"></div>
+            <div class="bolinha"></div>
+        </header>
+
+        <div class="principal">
+
+            <nav class="navegacao">
+                <h4>NAVEGAÇÃO</h4>
+            </nav>
+
+            <div class="direita">
+
+                <header class="cabecalho">
+                    <h4>CABEÇALHO</h4>
+                </header>
+
+                <main class="conteudo">
+                    <h4>CONTEÚDO</h4>
+                </main>
+
+                <footer class="rodape">
+                    <h4>RODAPÉ</h4>
+                </footer>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

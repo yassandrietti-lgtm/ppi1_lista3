@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Responsivo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            padding: 10px;
+            display: grid;
+            gap: 5px;
+
+            grid-template-columns: 1fr 2fr 1fr;
+
+            grid-template-rows: 60px 40px 1fr 25px 40px;
+
+            grid-template-areas:
+                "header header header"
+                "banner banner banner"
+                "left main right"
+                "left low right"
+                "footer footer footer";
+        }
+
+        .item {
+            padding: 10px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #f2b900;
+        }
+
+        .banner {
+            grid-area: banner;
+            background-color: #d83d32;
+        }
+
+        .left {
+            grid-area: left;
+            background-color: #159b59;
+        }
+
+        .main {
+            grid-area: main;
+            background-color: #4385e8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 300px;
+        }
+
+        .right {
+            grid-area: right;
+            background-color: #f2b900;
+        }
+
+        .low {
+            grid-area: low;
+            background-color: #159b59;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #4385e8;
+            text-align: center;
+        }
+
+        /* RESPONSIVIDADE */
+        @media screen and (max-width: 600px) {
+
+            .container {
+                grid-template-columns: 1fr;
+
+                grid-template-rows:
+                    40px
+                    35px
+                    35px
+                    minmax(300px, 1fr)
+                    35px
+                    35px
+                    35px;
+
+                grid-template-areas:
+                    "header"
+                    "banner"
+                    "left"
+                    "main"
+                    "right"
+                    "low"
+                    "footer";
+            }
+
+            .main {
+                min-height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="item header">
+            Header
+        </header>
+
+        <div class="item banner">
+            Banner
+        </div>
+
+        <aside class="item left">
+            Left Aside
+        </aside>
+
+        <main class="item main">
+            Main Content
+        </main>
+
+        <aside class="item right">
+            Right Aside
+        </aside>
+
+        <div class="item low">
+            Low Content
+        </div>
+
+        <footer class="item footer">
+            Footer
+        </footer>
+
+    </div>
+
+</body>
+</html>

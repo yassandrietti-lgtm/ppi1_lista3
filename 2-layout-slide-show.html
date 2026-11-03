@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Flexbox</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .galeria {
+            display: flex;
+            width: 90%;
+            height: 500px;
+            margin: 20px auto;
+            gap: 10px;
+        }
+
+        .imagem {
+            flex: 1;
+            overflow: hidden;
+            border-radius: 12px;
+            transition: flex 0.5s ease;
+            cursor: pointer;
+        }
+
+        .imagem:hover {
+            flex: 4;
+        }
+
+        .imagem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Galeria de Imagens</h1>
+
+    <div class="galeria">
+
+        <div class="imagem">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800" alt="Paisagem natural">
+        </div>
+
+        <div class="imagem">
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800" alt="Montanhas e lago">
+        </div>
+
+        <div class="imagem">
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800" alt="Praia">
+        </div>
+
+        <div class="imagem">
+            <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=800" alt="Nascer do sol">
+        </div>
+
+        <div class="imagem">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800" alt="Floresta">
+        </div>
+
+    </div>
+
+</body>
+</html>
